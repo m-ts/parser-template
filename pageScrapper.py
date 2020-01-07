@@ -1,5 +1,4 @@
 from item import Item
-from sessionManager import SessionManager
 from requests_html import HTMLSession
 
 
@@ -15,7 +14,7 @@ class PageScrapper:
 
     def __init__(self, url):
         """Class is initialized with website address"""
-        self.sessionManager = SessionManager()
+        self.sessionManager = None
         self.url = url
         self.rendered = True
         self.items = []

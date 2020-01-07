@@ -19,4 +19,7 @@ class SessionManager(object):
         except:
             r.close()
         
+    def __del__(self):
+        self.session.close()
+
 
