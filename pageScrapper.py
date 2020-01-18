@@ -50,6 +50,6 @@ class PageScrapper:
                     obj = product.get_product()
                     result.append(obj)
             except:
-                pass
+                pass # not valid product card
 
         self.result = result

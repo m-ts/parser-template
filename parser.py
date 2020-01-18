@@ -27,17 +27,14 @@ def main():
 
     search_url = search_url + parse.quote_plus(search_str) + '&page='
     # Iterate over pages
-    # try-except is used to hide any errors and pass only valid json to output
     for i in range(1, pages + 1):
         url = search_url + str(i)
         scrapper = PageScrapper(url)
         scrapper.sessionManager = sessionManager
-        try:
-            scrapper.get_page()
-            scrapper.get_items()
-            merged_result.append(scrapper.result)
-        except:
-            pass
+
+        scrapper.get_page()
+        scrapper.get_items()
+        merged_result.append(scrapper.result)
     
     del sessionManager
 
